@@ -1,6 +1,14 @@
-let food = { x: 11, y: 1 };
+import { expandSnake, onSnake } from './snake.js';
 
-export const update = () => {};
+let food = { x: 11, y: 1 };
+const EXPANSION_RATE = 1;
+
+export const update = () => {
+	if (onSnake(food)) {
+		expandSnake(EXPANSION_RATE);
+		food = { x: 20, y: 10 };
+	}
+};
 export const draw = (gameBoard) => {
 	const foodElement = document.createElement('div');
 	foodElement.style.gridRowStart = food.y;
