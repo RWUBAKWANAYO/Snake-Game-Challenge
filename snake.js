@@ -28,11 +28,16 @@ const equalPositions = (seg, pos) => seg.x === pos.x && seg.y === pos.y;
 
 export const expandSnake = (amount) => (newSegments += amount);
 
-export const onSnake = (position) => {
-	return snakeBody.some((segment) => {
+export const onSnake = (position, { ignoreHead = false } = {}) => {
+	return snakeBody.some((segment, index) => {
+		if (ignoreHead && index === 0) return false;
 		return equalPositions(segment, position);
 	});
 };
+
+export const getSnakeHead = () => snakeBody[0];
+
+export const snakeIntersection = () => onSnake(snakeBody[0], { ignoreHead: true });
 
 const addSegments = () => {
 	for (let i = 0; i < newSegments; i++) {

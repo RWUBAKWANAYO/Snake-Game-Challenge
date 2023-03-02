@@ -6,3 +6,6 @@ export const randomGridPosition = () => {
 		y: Math.floor(Math.random() * GRID_SIZE + 1),
 	};
 };
+
+export const outsideGrid = (position) =>
+	position.x < 1 || position.y > GRID_SIZE || position.y < 1 || position.y > GRID_SIZE;
