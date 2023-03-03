@@ -12,7 +12,7 @@ The game also includes a scoring system that tracks the player’s progress and 
 
 
 ## Live Demo
-[127.0.0.1:5500/index.html](http://127.0.0.1:5500/index.html)
+[snake-game-challenge.netlify.app](https://snake-game-challenge.netlify.app/)
 ## Getting Started
 To get a local copy open and running follow these simple example steps.
 ### Setup
